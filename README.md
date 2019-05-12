@@ -5,6 +5,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 # INTRODUCTION
 ### Showing file explorer in Android has never been easier.
 <br />
+
 # GETTING STARTED
 
 #### GRADLE SETUP:
@@ -22,7 +23,9 @@ Simple, Responsive &amp; Easy To Use Library For Android
 	}
 ```
 ##### Step 2: Add it in your build.gradle (Module:app)
+
 <br/>
+
 ```
 	dependencies {
 	        implementation 'com.github.BalioFVFX:Simple-Android-File-Explorer-Library:1.0'
@@ -30,9 +33,11 @@ Simple, Responsive &amp; Easy To Use Library For Android
 ```
 
 # USAGE
+
 ##### Note: Before showing the file explorer you must ask for "WRITE_EXTERNAL_STORAGE" permission.
 
 <br/>
+
 #### Showing the file explorer
 
 ```
@@ -43,8 +48,11 @@ startActivityForResult(intent, REQUEST_CODE);
 <br/>
 
 #### Getting the selected file absolute path
+
 ##### Note: Your activity must override the onActivityResult(); method.
+
 ![Permission Image](https://i.imgur.com/zxt34Vy.png)
+
 ```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -61,6 +69,7 @@ startActivityForResult(intent, REQUEST_CODE);
 <img src="https://i.imgur.com/WlVDRIG.png" alt="drawing" width="360"/>
 
 #### Changing the default icons with your custom drawables
+
 <br/>
 
 ```
@@ -68,14 +77,20 @@ SimpleFileResources.imageFileId = R.drawable.ic_my_custom_file;
 SimpleFileResources.imageDirectoryId = R.drawable.ic_my_custom_directory;
 ```
 ##### If you want to use the default icons:
+
 <br/>
+
 ```
 SimpleFileResources.imageFileId = null;
 SimpleFileResources.imageDirectoryId = null;
 ```
+
 #### END
+
 ##### You are free to use this library however you want. Credit is appreciated but it's not requiered.
+
 ##### Feel free to suggest new features or report problems by opening new issue or contacting me by email.
+
 <br/>
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HU65XMSW3YZ5S)
