@@ -7,6 +7,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 <br />
 
 # GETTING STARTED
+You can read the docs below or [The official detailed tutorial](https://baliofvfx.com/2019/05/12/simple-file-explorer-library-for-android/)
 
 #### GRADLE SETUP:
 ##### Step 1: Add it in your root build.gradle (Project) at the end of repositories
