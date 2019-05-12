@@ -39,7 +39,8 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
     public SimpleFileExplorerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater layoutInflater = LayoutInflater.from(this.context);
         View fileExplorerListView = layoutInflater.inflate(R.layout.file_explorer_list, null, false);
-
+        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        fileExplorerListView.setLayoutParams(lp);
         return new SimpleFileExplorerViewHolder(fileExplorerListView);
     }
 
