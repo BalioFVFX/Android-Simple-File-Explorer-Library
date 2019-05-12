@@ -48,10 +48,8 @@ startActivityForResult(intent, REQUEST_CODE);
 <br/>
 
 #### Getting the selected file absolute path
-
-##### Note: Your activity must override the onActivityResult(); method.
-
 ![Permission Image](https://i.imgur.com/zxt34Vy.png)
+##### Note: Your activity must override the onActivityResult(); method.
 
 ```
     @Override
