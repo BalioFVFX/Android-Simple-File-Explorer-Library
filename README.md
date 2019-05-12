@@ -27,7 +27,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:1.0.1'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:1.0.2'
 	}
 ```
 
@@ -55,8 +55,8 @@ startActivityForResult(intent, REQUEST_CODE);
 ```
 
 <p float="left">
-  <img src="https://i.imgur.com/uX3iFqn.png" width="300" />
-  <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
+  <img src="https://i.imgur.com/n229g4p.png" width="300" />
+  <img src="https://i.imgur.com/L0qowxq.png" width="300" /> 
 </p>
 
 #### Changing the default icons with your custom drawables
