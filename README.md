@@ -9,8 +9,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 # GETTING STARTED
 
 #### GRADLE SETUP:
-
-##### Add it in your root build.gradle (Project) at the end of repositories
+##### Step1: Add it in your root build.gradle (Project) at the end of repositories
 
 <br />
 
@@ -80,13 +79,8 @@ SimpleFileResources.imageDirectoryId = R.drawable.ic_my_custom_directory;
 SimpleFileResources.imageFileId = null;
 SimpleFileResources.imageDirectoryId = null;
 ```
-
 #### END
-
 ##### You are free to use this library however you want. Credit is appreciated but it's not requiered.
-
 ##### Feel free to suggest new features or report problems by opening new issue or contacting me by email.
-
 <br/>
-
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HU65XMSW3YZ5S)
