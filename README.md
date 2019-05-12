@@ -41,8 +41,6 @@ Simple, Responsive &amp; Easy To Use Library For Android
 Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity.
 startActivityForResult(intent, REQUEST_CODE);
 ```
-<br/>
-
 #### Getting the selected file absolute path
 ##### Note: Your activity must override the onActivityResult(); method.
 
