@@ -39,12 +39,10 @@ Simple, Responsive &amp; Easy To Use Library For Android
 <br/>
 
 #### Showing the file explorer
-
 ```
 Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity.
 startActivityForResult(intent, REQUEST_CODE);
 ```
-
 <br/>
 
 #### Getting the selected file absolute path
