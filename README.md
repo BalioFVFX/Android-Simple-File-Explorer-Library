@@ -34,9 +34,8 @@ Simple, Responsive &amp; Easy To Use Library For Android
 # USAGE
 
 ##### Note: Before showing the file explorer you must ask for "WRITE_EXTERNAL_STORAGE" permission.
-
+![Permission Image](https://i.imgur.com/zxt34Vy.png)
 <br/>
-
 #### Showing the file explorer
 ```
 Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity.
@@ -45,9 +44,7 @@ startActivityForResult(intent, REQUEST_CODE);
 <br/>
 
 #### Getting the selected file absolute path
-![Permission Image](https://i.imgur.com/zxt34Vy.png)
 ##### Note: Your activity must override the onActivityResult(); method.
-
 ```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -57,24 +54,17 @@ startActivityForResult(intent, REQUEST_CODE);
         }
     }
 ```
-
 <br/>
-
 <img src="https://i.imgur.com/2dU8LR0.png" alt="drawing" width="360"/>
 <img src="https://i.imgur.com/WlVDRIG.png" alt="drawing" width="360"/>
-
 #### Changing the default icons with your custom drawables
-
 <br/>
-
 ```
 SimpleFileResources.imageFileId = R.drawable.ic_my_custom_file;
 SimpleFileResources.imageDirectoryId = R.drawable.ic_my_custom_directory;
 ```
 ##### If you want to use the default icons:
-
 <br/>
-
 ```
 SimpleFileResources.imageFileId = null;
 SimpleFileResources.imageDirectoryId = null;
