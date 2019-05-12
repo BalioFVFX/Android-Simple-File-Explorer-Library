@@ -57,7 +57,7 @@ startActivityForResult(intent, REQUEST_CODE);
 ```
 
 <p float="left">
-  <img src="https://i.imgur.com/2dU8LR0.png" width="300" />
+  <img src="https://i.imgur.com/uX3iFqn.png" width="300" />
   <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
 </p>
 
@@ -78,5 +78,5 @@ SimpleFileResources.imageDirectoryId = null;
 #### END
 ##### You are free to use this library however you want. Credit is appreciated but it's not requiered.
 ##### Feel free to suggest new features or report problems by opening new issue or contacting me by email.
-<br/>
+
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HU65XMSW3YZ5S)
