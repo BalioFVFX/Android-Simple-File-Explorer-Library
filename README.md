@@ -6,9 +6,13 @@ Simple, Responsive &amp; Easy To Use Library For Android
 ### Showing file explorer in Android has never been easier.
 <br />
 # GETTING STARTED
+
 #### GRADLE SETUP:
-##### Add it in your root build.gradle (Project) at the end of repositories:
+
+##### Add it in your root build.gradle (Project) at the end of repositories
+
 <br />
+
 ```
 	allprojects {
 		repositories {
@@ -30,11 +34,14 @@ Simple, Responsive &amp; Easy To Use Library For Android
 
 <br/>
 #### Showing the file explorer
+
 ```
 Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity.
 startActivityForResult(intent, REQUEST_CODE);
 ```
+
 <br/>
+
 #### Getting the selected file absolute path
 ##### Note: Your activity must override the onActivityResult(); method.
 ![Permission Image](https://i.imgur.com/zxt34Vy.png)
@@ -47,6 +54,7 @@ startActivityForResult(intent, REQUEST_CODE);
         }
     }
 ```
+
 <br/>
 
 <img src="https://i.imgur.com/2dU8LR0.png" alt="drawing" width="360"/>
