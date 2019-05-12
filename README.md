@@ -9,7 +9,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 # GETTING STARTED
 
 #### GRADLE SETUP:
-##### Step1: Add it in your root build.gradle (Project) at the end of repositories
+##### Step 1: Add it in your root build.gradle (Project) at the end of repositories
 
 <br />
 
