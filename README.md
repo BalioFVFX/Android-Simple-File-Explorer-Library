@@ -66,7 +66,7 @@ startActivityForResult(intent, REQUEST_CODE);
 SimpleFileResources.imageFileId = R.drawable.ic_my_custom_file;
 SimpleFileResources.imageDirectoryId = R.drawable.ic_my_custom_directory;
 ```
-
+<br/>
 ##### If you want to use the default icons:
 
 ```
