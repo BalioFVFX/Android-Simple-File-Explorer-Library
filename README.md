@@ -27,7 +27,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Simple-Android-File-Explorer-Library:1.0.1'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:1.0.1'
 	}
 ```
 
