@@ -55,10 +55,10 @@ startActivityForResult(intent, REQUEST_CODE);
     }
 ```
 <br/>
-
-SELECT YOUR PATH             |  RECEIVE YOUR PATH
-:-------------------------:|:-------------------------:
-![](https://i.imgur.com/2dU8LR0.png)  |  ![](https://i.imgur.com/WlVDRIG.png)
+<p float="left">
+  <img src="https://i.imgur.com/2dU8LR0.png" width="300" />
+  <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
+</p>
 #### Changing the default icons with your custom drawables
 <br/>
 ```
