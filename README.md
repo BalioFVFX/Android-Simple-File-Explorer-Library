@@ -45,6 +45,7 @@ startActivityForResult(intent, REQUEST_CODE);
 
 #### Getting the selected file absolute path
 ##### Note: Your activity must override the onActivityResult(); method.
+
 ```
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -54,7 +55,7 @@ startActivityForResult(intent, REQUEST_CODE);
         }
     }
 ```
-<br/>
+
 <p float="left">
   <img src="https://i.imgur.com/2dU8LR0.png" width="300" />
   <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
