@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerViewHolder> {
@@ -61,6 +63,16 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
 
     public void loadDirectory(List<FileModel> filesList) {
         this.filesList = new ArrayList<>(filesList);
+        Collections.sort(this.filesList, new Comparator<FileModel>() {
+            @Override
+            public int compare(FileModel o1, FileModel o2) {
+                int directorySortResult = o2.getFileModelType().compareTo(o1.getFileModelType());
+                if(directorySortResult == 0){
+                    return o1.getAbsolutePath().compareTo(o2.getAbsolutePath());
+                }
+                return directorySortResult;
+            }
+        });
         this.notifyDataSetChanged();
     }
 
@@ -72,7 +84,7 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
         int fileImageId = 0;
         int directoryImageId = 0;
         if(SimpleFileResources.imageFileId == null){
-            directoryImageId = SimpleFileResources.defaultImageFileId;
+            fileImageId = SimpleFileResources.defaultImageFileId;
         }
         if(SimpleFileResources.imageDirectoryId == null){
             directoryImageId = SimpleFileResources.defaultImageDirectoryId;
