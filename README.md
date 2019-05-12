@@ -61,17 +61,19 @@ startActivityForResult(intent, REQUEST_CODE);
   <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
 </p>
 #### Changing the default icons with your custom drawables
-<br/>
+
 ```
 SimpleFileResources.imageFileId = R.drawable.ic_my_custom_file;
 SimpleFileResources.imageDirectoryId = R.drawable.ic_my_custom_directory;
 ```
+
 ##### If you want to use the default icons:
-<br/>
+
 ```
 SimpleFileResources.imageFileId = null;
 SimpleFileResources.imageDirectoryId = null;
 ```
+
 #### END
 ##### You are free to use this library however you want. Credit is appreciated but it's not requiered.
 ##### Feel free to suggest new features or report problems by opening new issue or contacting me by email.
