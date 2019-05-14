@@ -9,7 +9,7 @@
 
     <ImageView
         android:id="@+id/iv_file"
-        android:layout_width="27dp"
+        android:layout_width="28dp"
         android:layout_height="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
