@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Environment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -34,14 +35,8 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
         this.setSelectButtonClickListener();
         SimpleFileExplorerFragment fragment = new SimpleFileExplorerFragment();
         fragment.setListeners(this);
-        getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(this.STACK_KEY).commit();
-
-        getSupportFragmentManager().addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
-            @Override
-            public void onBackStackChanged() {
-                selectButton.setEnabled(false);
-            }
-        });
+        getSupportFragmentManager().beginTransaction().add(R.id.frame_layout, fragment).addToBackStack(STACK_KEY).commit();
+        this.selectedAbsolutePath = Environment.getExternalStorageDirectory().getAbsolutePath();
     }
 
     private void initViews(){
@@ -72,10 +67,11 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
 
     @Override
     public void onDirectoryChanged(String absolutePath) {
+        this.selectedAbsolutePath = absolutePath;
         SimpleFileExplorerFragment fragment = new SimpleFileExplorerFragment();
         fragment.setListeners(this);
         fragment.setDirectory(absolutePath);
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(this.STACK_KEY).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, fragment).addToBackStack(STACK_KEY).commit();
     }
 
     @Override
@@ -85,8 +81,9 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
     }
 
     @Override
-    public void updateFileTypeIcon() {
+    public void onBackButtonPressed(String absolutePath) {
         this.fileTypeImageView.setImageResource(R.drawable.ic_folder);
+        this.selectedAbsolutePath = absolutePath;
     }
 
     private void checkPermission(){

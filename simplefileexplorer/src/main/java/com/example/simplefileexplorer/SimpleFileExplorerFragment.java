@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -57,6 +56,9 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
 
         if(this.selectedAbsolutePath != null){
             root = new File(this.selectedAbsolutePath);
+        }
+        else{
+            this.selectedAbsolutePath = root.getAbsolutePath();
         }
 
         List<FileModel> fileModelList = new ArrayList<>();
@@ -108,6 +110,6 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
     @Override
     public void onStart() {
         super.onStart();
-        this.activityListener.updateFileTypeIcon();
+        this.activityListener.onBackButtonPressed(this.selectedAbsolutePath);
     }
 }
