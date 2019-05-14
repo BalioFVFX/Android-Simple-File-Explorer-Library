@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class SimpleFileExplorerActivity extends AppCompatActivity implements ActivityListener{
 
@@ -19,6 +21,7 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
 
 
     private Button selectButton;
+    private ImageView fileTypeImageView;
     private String selectedAbsolutePath;
 
 
@@ -43,6 +46,11 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
 
     private void initViews(){
         this.initButton();
+        this.initImageView();
+    }
+
+    private void initImageView() {
+        this.fileTypeImageView = this.findViewById(R.id.iv_file_type);
     }
 
 
@@ -73,7 +81,12 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
     @Override
     public void onFileSelect(String absolutePath) {
         this.selectedAbsolutePath = absolutePath;
-        this.selectButton.setEnabled(true);
+        this.fileTypeImageView.setImageResource(R.drawable.ic_file);
+    }
+
+    @Override
+    public void updateFileTypeIcon() {
+        this.fileTypeImageView.setImageResource(R.drawable.ic_folder);
     }
 
     private void checkPermission(){
@@ -82,4 +95,6 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
             throw new SecurityException(String.format("Permission %s is not granted.", Manifest.permission.WRITE_EXTERNAL_STORAGE));
         }
     }
+
+
 }

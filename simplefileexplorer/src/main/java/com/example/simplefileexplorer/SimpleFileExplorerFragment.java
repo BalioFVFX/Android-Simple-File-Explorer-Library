@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -102,5 +103,11 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
 
     void setDirectory(String dir){
         this.selectedAbsolutePath = dir;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        this.activityListener.updateFileTypeIcon();
     }
 }
