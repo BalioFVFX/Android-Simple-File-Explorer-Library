@@ -7,6 +7,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 <br />
 
 # GETTING STARTED
+You can read the docs below or [The official detailed tutorial](https://baliofvfx.com/2019/05/12/simple-file-explorer-library-for-android/)
 
 #### GRADLE SETUP:
 ##### Step 1: Add it in your root build.gradle (Project) at the end of repositories
@@ -27,7 +28,7 @@ Simple, Responsive &amp; Easy To Use Library For Android
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:1.0.1'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:1.0.2'
 	}
 ```
 
@@ -55,8 +56,8 @@ startActivityForResult(intent, REQUEST_CODE);
 ```
 
 <p float="left">
-  <img src="https://i.imgur.com/uX3iFqn.png" width="300" />
-  <img src="https://i.imgur.com/WlVDRIG.png" width="300" /> 
+  <img src="https://i.imgur.com/n229g4p.png" width="300" />
+  <img src="https://i.imgur.com/L0qowxq.png" width="300" /> 
 </p>
 
 #### Changing the default icons with your custom drawables
