@@ -75,7 +75,7 @@ SimpleFileResources.imageDirectoryId = null;
 ```
 
 #### END
-##### You are free to use this library however you want. Credit is appreciated but it's not requiered.
+##### You are free to include this library in your application. Credit is appreciated but it's not requiered.
 ##### Feel free to suggest new features or report problems by opening new issue or contacting me by email.
 
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HU65XMSW3YZ5S)
