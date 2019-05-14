@@ -51,7 +51,7 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
         simpleFileExplorerViewHolder.backgroundConstraintLayout.setBackgroundColor(Color.rgb(255, 255, 255));
         this.setTextByFileAbsolutePath(simpleFileExplorerViewHolder.fileAbsolutePathTextView, fileModel.getAbsolutePath());
         this.setImagesByFileType(simpleFileExplorerViewHolder.fileImageView, fileModel.getFileModelType());
-        this.setLayoutOnClickListenerByFileType(simpleFileExplorerViewHolder.backgroundConstraintLayout, fileModel.getFileModelType(), fileModel.getAbsolutePath(), i);
+        this.setLayoutOnClickListenerByFileType(simpleFileExplorerViewHolder.backgroundConstraintLayout, fileModel.getFileModelType(), fileModel, i);
         this.updateSelectedItemColor(simpleFileExplorerViewHolder.backgroundConstraintLayout, i);
 
 
@@ -68,7 +68,7 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
             @Override
             public int compare(FileModel o1, FileModel o2) {
                 int directorySortResult = o2.getFileModelType().compareTo(o1.getFileModelType());
-                if(directorySortResult == 0){
+                if (directorySortResult == 0) {
                     return o1.getAbsolutePath().compareTo(o2.getAbsolutePath());
                 }
                 return directorySortResult;
@@ -84,10 +84,10 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
     private void setImagesByFileType(ImageView imageView, FileModelType fileModelType) {
         int fileImageId = 0;
         int directoryImageId = 0;
-        if(SimpleFileResources.imageFileId == null){
+        if (SimpleFileResources.imageFileId == null) {
             fileImageId = SimpleFileResources.defaultImageFileId;
         }
-        if(SimpleFileResources.imageDirectoryId == null){
+        if (SimpleFileResources.imageDirectoryId == null) {
             directoryImageId = SimpleFileResources.defaultImageDirectoryId;
         }
         switch (fileModelType) {
@@ -102,18 +102,25 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
         }
     }
 
-    private void setLayoutOnClickListenerByFileType(final ConstraintLayout layout, final FileModelType fileModelType, final String absolutePath, final int index) {
+    private void setLayoutOnClickListenerByFileType(final ConstraintLayout layout, final FileModelType fileModelType, final FileModel fileModel, final int index) {
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (fileModelType) {
                     case FILE:
-                        adapterListener.onFileClick(absolutePath);
+                        if (fileModel.isSelected()) {
+                            fileModel.setSelected(false);
+                            adapterListener.onFileClick(fileModel);
+                            notifyDataSetChanged();
+                            break;
+                        }
+                        fileModel.setSelected(true);
+                        adapterListener.onFileClick(fileModel);
                         previousItemSelectedIndex = index;
                         notifyDataSetChanged();
                         break;
                     case DIRECTORY:
-                        adapterListener.onDirectoryClick(absolutePath);
+                        adapterListener.onDirectoryClick(fileModel.getAbsolutePath());
                         break;
                     default:
                         break;

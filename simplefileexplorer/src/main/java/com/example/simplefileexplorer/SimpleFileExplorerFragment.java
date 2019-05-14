@@ -69,7 +69,7 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
                     fileModelList.add(new FileModel(file.getAbsolutePath(), FileModelType.DIRECTORY));
                 }
                 else{
-                    fileModelList.add(new FileModel(file.getAbsolutePath(), FileModelType.FILE));
+                    fileModelList.add(new FileModel(file.getAbsolutePath(), file.getParentFile().getAbsolutePath(), FileModelType.FILE));
                 }
             }
         }
@@ -95,8 +95,8 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
     }
 
     @Override
-    public void onFileClick(String selectedAbsolutePath) {
-        this.activityListener.onFileSelect(selectedAbsolutePath);
+    public void onFileClick(FileModel fileModel) {
+        this.activityListener.onFileSelect(fileModel);
     }
 
     void setListeners(ActivityListener activityListener){

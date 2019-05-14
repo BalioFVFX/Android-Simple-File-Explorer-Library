@@ -75,9 +75,16 @@ public class SimpleFileExplorerActivity extends AppCompatActivity implements Act
     }
 
     @Override
-    public void onFileSelect(String absolutePath) {
-        this.selectedAbsolutePath = absolutePath;
-        this.fileTypeImageView.setImageResource(R.drawable.ic_file);
+    public void onFileSelect(FileModel fileModel) {
+        if(fileModel.isSelected()){
+            this.selectedAbsolutePath = fileModel.getAbsolutePath();
+            this.fileTypeImageView.setImageResource(R.drawable.ic_file);
+        }
+        else{
+            this.selectedAbsolutePath = fileModel.getDirectoryPath();
+            this.fileTypeImageView.setImageResource(R.drawable.ic_folder);
+        }
+
     }
 
     @Override
