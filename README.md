@@ -28,7 +28,7 @@ You can read the docs below or [The official detailed tutorial](https://baliofvf
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.1'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.2'
 	}
 ```
 
