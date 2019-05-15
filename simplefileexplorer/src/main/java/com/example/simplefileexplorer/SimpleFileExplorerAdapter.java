@@ -47,14 +47,11 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
     @Override
     public void onBindViewHolder(@NonNull SimpleFileExplorerViewHolder simpleFileExplorerViewHolder, final int i) {
         FileModel fileModel = this.filesList.get(i);
-
         simpleFileExplorerViewHolder.backgroundConstraintLayout.setBackgroundColor(Color.rgb(255, 255, 255));
         this.setTextByFileAbsolutePath(simpleFileExplorerViewHolder.fileAbsolutePathTextView, fileModel.getAbsolutePath());
         this.setImagesByFileType(simpleFileExplorerViewHolder.fileImageView, fileModel.getFileModelType());
         this.setLayoutOnClickListenerByFileType(simpleFileExplorerViewHolder.backgroundConstraintLayout, fileModel.getFileModelType(), fileModel, i);
-        this.updateSelectedItemColor(simpleFileExplorerViewHolder.backgroundConstraintLayout, i);
-
-
+        this.updateSelectedItemColor(simpleFileExplorerViewHolder.backgroundConstraintLayout, i, fileModel);
     }
 
     @Override
@@ -130,10 +127,13 @@ class SimpleFileExplorerAdapter extends RecyclerView.Adapter<SimpleFileExplorerV
         });
     }
 
-    private void updateSelectedItemColor(ConstraintLayout layout, final int index) {
+    private void updateSelectedItemColor(ConstraintLayout layout, final int index, FileModel fileModel) {
         if (this.previousItemSelectedIndex == index) {
             layout.setBackgroundColor(Color.rgb(168, 168, 168));
+            fileModel.setSelected(true);
             this.previousItemSelectedIndex = -1;
+        } else {
+            fileModel.setSelected(false);
         }
     }
 }
