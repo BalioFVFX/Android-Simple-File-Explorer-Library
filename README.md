@@ -28,7 +28,7 @@ You can read the docs below or [The official detailed tutorial](https://baliofvf
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.1'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.2'
 	}
 ```
 
@@ -54,7 +54,7 @@ startActivityForResult(intent, REQUEST_CODE);
         }
     }
 ```
-
+#### Note: Always check if the data is null, otherwise exception may occur. <br/>For example if the user doesn't select a directory / file and closes the file explorer data will be null.
 <p float="left">
   <img src="https://i.imgur.com/n229g4p.png" width="300" />
   <img src="https://i.imgur.com/L0qowxq.png" width="300" /> 
