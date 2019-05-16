@@ -7,4 +7,5 @@ public class SimpleFileResources {
 
     static int defaultImageFileId = R.drawable.ic_file;
     static int defaultImageDirectoryId = R.drawable.ic_folder;
+
 }
