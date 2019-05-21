@@ -28,7 +28,7 @@ You can read the docs below or [The official detailed tutorial](https://baliofvf
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.2'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.3'
 	}
 ```
 
@@ -39,9 +39,17 @@ You can read the docs below or [The official detailed tutorial](https://baliofvf
 <br/>
 #### Showing the file explorer
 ```
-Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity.
+Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity);
 startActivityForResult(intent, REQUEST_CODE);
 ```
+#### Disabling the select button for directories
+```
+Intent intent = new Intent(CONTEXT, SimpleFileExplorerActivity);
+intent.putExtra(SimpleFileExplorerActivity.ENABLE_DIRECTORY_SELECT_KEY, false);
+startActivityForResult(intent, REQUEST_CODE);
+```
+##### Note: By default you can select directories, however you may want to disable this functionality.
+
 #### Getting the selected file absolute path
 ##### Note: Your activity must override the onActivityResult(); method.
 
