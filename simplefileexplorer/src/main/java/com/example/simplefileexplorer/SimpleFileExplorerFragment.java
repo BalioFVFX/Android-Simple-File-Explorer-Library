@@ -3,18 +3,18 @@ package com.example.simplefileexplorer;
 
 import android.os.Bundle;
 import android.os.Environment;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
 
 
 public class SimpleFileExplorerFragment extends Fragment implements AdapterListener {
@@ -41,7 +41,7 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
         return view;
     }
 
-    private void initRecyclerView(View view){
+    private void initRecyclerView(View view) {
         this.recyclerView = view.findViewById(R.id.recycler_file_explorer);
         this.fileExplorerAdapter = new SimpleFileExplorerAdapter(getContext());
         this.fileExplorerAdapter.setAdapterListener(this);
@@ -51,41 +51,44 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
         this.recyclerView.addItemDecoration(new DividerItemDecoration(this.recyclerView.getContext(), DividerItemDecoration.VERTICAL));
     }
 
-    private void loadDirectory(){
+    private void loadDirectory() {
         File root = Environment.getExternalStorageDirectory();
 
-        if(this.selectedAbsolutePath != null){
+        if (this.selectedAbsolutePath != null) {
             root = new File(this.selectedAbsolutePath);
-        }
-        else{
+        } else {
             this.selectedAbsolutePath = root.getAbsolutePath();
         }
 
         List<FileModel> fileModelList = new ArrayList<>();
 
-        if(root.isDirectory()){
-            for (File file : root.listFiles()) {
-                if(file.isDirectory()){
+
+        final File[] listFiles = root.listFiles();
+        if (root.isDirectory() && listFiles != null) {
+            for (File file : listFiles) {
+                if (file.isDirectory()) {
                     fileModelList.add(new FileModel(file.getAbsolutePath(), FileModelType.DIRECTORY));
-                }
-                else{
-                    fileModelList.add(new FileModel(file.getAbsolutePath(), file.getParentFile().getAbsolutePath(), FileModelType.FILE));
+                } else {
+                    final File parent = file.getParentFile();
+                    if (parent == null) {
+                        continue;
+                    }
+                    fileModelList.add(new FileModel(file.getAbsolutePath(), parent.getAbsolutePath(), FileModelType.FILE));
                 }
             }
-        }
-        else{
+        } else {
             fileModelList.add(new FileModel(root.getAbsolutePath(), FileModelType.DIRECTORY));
         }
 
         this.updateRecyclerList(fileModelList);
     }
 
-    private void updateRecyclerList(List<FileModel> fileModels){
+    private void updateRecyclerList(List<FileModel> fileModels) {
         this.fileExplorerAdapter.loadDirectory(fileModels);
     }
 
 
-    private void initViews(View view){
+    private void initViews(View view) {
         this.initRecyclerView(view);
     }
 
@@ -99,11 +102,11 @@ public class SimpleFileExplorerFragment extends Fragment implements AdapterListe
         this.activityListener.onFileSelect(fileModel);
     }
 
-    void setListeners(ActivityListener activityListener){
+    void setListeners(ActivityListener activityListener) {
         this.activityListener = activityListener;
     }
 
-    void setDirectory(String dir){
+    void setDirectory(String dir) {
         this.selectedAbsolutePath = dir;
     }
 
