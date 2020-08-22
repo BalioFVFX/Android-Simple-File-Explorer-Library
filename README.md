@@ -1,5 +1,7 @@
 # Android-Simple-File-Explorer-Library
-Simple, Responsive &amp; Easy To Use Library For Android
+Simple, Responsive &amp; Easy To Use Library For Android\
+**Warning: This library uses external legacy storage! android:requestLegacyExternalStorage="true".** Please read more about it here: https://developer.android.com/training/data-storage/use-cases#opt-out-scoped-storage
+
 
 [![](https://jitpack.io/v/BalioFVFX/Android-Simple-File-Explorer-Library.svg)](https://jitpack.io/#BalioFVFX/Android-Simple-File-Explorer-Library)
 # INTRODUCTION
@@ -28,7 +30,7 @@ You can read the docs below or [The official detailed tutorial](https://baliofvf
 
 ```
 	dependencies {
-	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.6'
+	        implementation 'com.github.BalioFVFX:Android-Simple-File-Explorer-Library:2.0.7'
 	}
 ```
 
